@@ -1,0 +1,31 @@
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+<!ENTITY paneHistory.title                 "History">
+<!ENTITY panePreferences.title             "Preferences">
+
+<!-- History -->
+<!ENTITY totalTimeToday.label              "Total time today:">
+
+<!ENTITY filter.emptytext                  "Search by issue ID">
+
+<!ENTITY issueColumn.label                 "Issue">
+<!ENTITY startColumn.label                 "Start">
+<!ENTITY durationColumn.label              "Duration">
+
+<!ENTITY removeTimeEntry.label             "Remove">
+<!ENTITY removeTimeEntry.accesskey         "R">
+
+<!-- Preferences -->
+<!ENTITY redmineDomain.label               "Redmine Domain:">
+<!ENTITY redmineDomain.accesskey           "D">
+<!ENTITY redmineDomain.emptytext           "Something like redmine.example.com">
+<!ENTITY behaviour.label                   "Behaviour">
+<!ENTITY markAsReportedStop.label          "Stop tracking after mark as reported">
+<!ENTITY markAsReportedCopyToTask.label    "Copy duration into form on the page after mark as reported">
+<!ENTITY latestTasksClickToTracking.label  "Use click to start tracking in list of latest tasks">
+<!ENTITY view.label                        "View">
+<!ENTITY copyDurationShow.label            "Show 'Copy duration' button">
+<!ENTITY latestTasksCount.label            "Count of latest tasks in menu:">
+

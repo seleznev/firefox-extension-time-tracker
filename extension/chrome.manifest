@@ -1,0 +1,5 @@
+content  time-tracker               chrome/content/
+skin     time-tracker  classic/1.0  chrome/skin/
+
+locale   time-tracker  en           chrome/locale/en/
+locale   time-tracker  ru           chrome/locale/ru/

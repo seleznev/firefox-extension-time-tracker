@@ -1,0 +1,31 @@
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+<!ENTITY paneHistory.title                 "История">
+<!ENTITY panePreferences.title             "Настройки">
+
+<!-- History -->
+<!ENTITY totalTimeToday.label              "Всего сегодня:">
+
+<!ENTITY filter.emptytext                  "Поиск по номеру задачи">
+
+<!ENTITY issueColumn.label                 "Задача">
+<!ENTITY startColumn.label                 "Начало">
+<!ENTITY durationColumn.label              "Длительность">
+
+<!ENTITY removeTimeEntry.label             "Удалить">
+<!ENTITY removeTimeEntry.accesskey         "У">
+
+<!-- Preferences -->
+<!ENTITY redmineDomain.label               "Домен Redmine:">
+<!ENTITY redmineDomain.accesskey           "R">
+<!ENTITY redmineDomain.emptytext           "Например, redmine.example.com">
+<!ENTITY behaviour.label                   "Поведение">
+<!ENTITY markAsReportedStop.label          "Остановливать таймер при переводе времени в зарепорченное">
+<!ENTITY markAsReportedCopyToTask.label    "Копировать время в форму на странице при переводе времени в зарепорченное">
+<!ENTITY latestTasksClickToTracking.label  "Использовать щелчок для запуска таймера в списке задач">
+<!ENTITY view.label                        "Внешний вид">
+<!ENTITY copyDurationShow.label            "Показывать кнопку 'Скопировать время'">
+<!ENTITY latestTasksCount.label            "Количество последних задач в меню:">
+

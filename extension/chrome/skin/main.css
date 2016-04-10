@@ -1,0 +1,44 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+@-moz-document url("chrome://browser/content/browser.xul") {
+
+#time-tracker {
+  list-style-image: url(chrome://time-tracker/skin/clock.png);
+}
+
+toolbar[brighttext] #time-tracker {
+  list-style-image: url(chrome://time-tracker/skin/clock-inverted.png);
+}
+
+#time-tracker[cui-areatype="menu-panel"],
+toolbarpaletteitem[place="palette"] > #time-tracker {
+  list-style-image: url(chrome://time-tracker/skin/clock-menuPanel.png);
+  -moz-image-region: rect(0px, 32px, 32px, 0px);
+}
+
+#time-tracker[cui-areatype="menu-panel"][panel-multiview-anchor=true] {
+  -moz-image-region: rect(32px, 32px, 64px, 0px);
+}
+
+#time-tracker > .toolbarbutton-badge-stack > .toolbarbutton-badge {
+  background-color: #555753 !important; /* gray */
+}
+
+#time-tracker[state="running"] > .toolbarbutton-badge-stack > .toolbarbutton-badge {
+  background-color: #e57100 !important; /* orange */
+}
+
+#time-tracker[state="running"][issue="true"] > .toolbarbutton-badge-stack > .toolbarbutton-badge {
+  background-color: #4183c4 !important; /* blue */
+}
+
+/* ::::: ::::: */
+#panelMenu_timeTracker_historyIssues {
+  max-width: 300px;
+}
+
+}

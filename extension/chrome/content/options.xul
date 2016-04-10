@@ -1,0 +1,199 @@
+<?xml version="1.0"?>
+
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+<!DOCTYPE page SYSTEM "chrome://time-tracker/locale/options.dtd">
+
+<?xml-stylesheet href="chrome://global/skin/global.css"?>
+
+<?xml-stylesheet href="chrome://mozapps/content/preferences/preferences.css"?>
+
+<?xml-stylesheet href="chrome://browser/skin/preferences/preferences.css"?>
+<?xml-stylesheet href="chrome://global/skin/in-content/common.css"?>
+<?xml-stylesheet href="chrome://browser/skin/preferences/in-content/preferences.css"?>
+<?xml-stylesheet href="chrome://browser/content/preferences/handlers.css"?>
+<?xml-stylesheet href="chrome://browser/skin/preferences/applications.css"?>
+<?xml-stylesheet href="chrome://browser/skin/preferences/in-content/search.css"?>
+<?xml-stylesheet href="chrome://browser/skin/preferences/in-content/preferences.css"?>
+<?xml-stylesheet href="chrome://browser/content/preferences/handlers.css"?>
+<?xml-stylesheet href="chrome://browser/skin/preferences/applications.css"?>
+
+<?xml-stylesheet href="chrome://time-tracker/skin/options.css"?>
+
+<page id="time-tracker-options"
+      title="Time Tracker"
+      disablefastfind="true"
+      xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+      xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+<xhtml:link rel="shortcut icon" href="chrome://time-tracker/skin/gnome-16.png"/>
+
+<script type="application/javascript" src="chrome://time-tracker/content/options.js"/>
+
+  <hbox flex="1">
+    <richlistbox id="categories">
+      <richlistitem id="category-history" class="category" value="paneHistory"
+                    tooltiptext="&paneHistory.title;" align="center">
+        <image class="category-icon"/>
+        <label class="category-name" flex="1">&paneHistory.title;</label>
+      </richlistitem>
+      <richlistitem id="category-preferences" class="category" value="panePreferences"
+                    tooltiptext="&panePreferences.title;" align="center">
+        <image class="category-icon"/>
+        <label class="category-name" flex="1">&panePreferences.title;</label>
+      </richlistitem>
+    </richlistbox>
+
+    <vbox class="main-content" flex="1">
+      <prefpane id="mainPrefPane">
+
+        <preferences id="feedsPreferences">
+          <preference id="extensions.time-tracker.domain"
+                      name="extensions.time-tracker.domain"
+                      type="string"/>
+          <preference id="extensions.time-tracker.mark-as-reported.stop"
+                      name="extensions.time-tracker.mark-as-reported.stop"
+                      type="bool"/>
+          <preference id="extensions.time-tracker.mark-as-reported.copy-to-task"
+                      name="extensions.time-tracker.mark-as-reported.copy-to-task"
+                      type="bool"/>
+          <preference id="extensions.time-tracker.copy-duration.show"
+                      name="extensions.time-tracker.copy-duration.show"
+                      type="bool"/>
+          <preference id="extensions.time-tracker.latest-tasks.count"
+                      name="extensions.time-tracker.latest-tasks.count"
+                      type="int"/>
+          <preference id="extensions.time-tracker.latest-tasks.click-to-tracking"
+                      name="extensions.time-tracker.latest-tasks.click-to-tracking"
+                      type="bool"/>
+        </preferences>
+
+        <!-- History panel -->
+
+        <script type="application/javascript"
+                src="chrome://time-tracker/content/history.js"/>
+
+        <hbox id="header-history"
+              class="header"
+              hidden="true"
+              data-category="paneHistory">
+          <label class="header-name">&paneHistory.title;</label>
+        </hbox>
+
+        <vbox id="historyContent"
+              data-category="paneHistory"
+              hidden="true"
+              flex="1">
+
+          <groupbox data-category="paneHistory" hidden="false">
+            <hbox align="center">
+              <label>&totalTimeToday.label;</label>
+              <textbox id="totalTimeToday" size="2"/>
+            </hbox>
+          </groupbox>
+
+          <groupbox id="timeEntriesGroup" data-category="paneHistory">
+            <hbox>
+              <textbox id="filter" flex="1"
+                       type="search"
+                       placeholder="&filter.emptytext;"
+                       aria-controls="timeEntriesView"/>
+            </hbox>
+
+            <tree id="timeEntriesList" flex="1" rows="10" hidecolumnpicker="true" editable="true"
+                  seltype="single">
+              <treecols>
+                <treecol id="timeEntryIssue" flex="4" label="&issueColumn.label;" sortable="false"/>
+                <treecol id="timeEntryStart" flex="1" label="&startColumn.label;" sortable="false"/>
+                <treecol id="timeEntryDuration" flex="1" label="&durationColumn.label;" sortable="false"/>
+              </treecols>
+
+              <treechildren id="timeEntryChildren" flex="1">
+                <treeitem>
+                  <treerow>
+                    <treecell label="#0"/>
+                    <treecell label="25 jun 2015"/>
+                    <treecell label="1.34"/>
+                  </treerow>
+                </treeitem>
+              </treechildren>
+            </tree>
+
+            <hbox>
+              <spacer flex="1"/>
+              <button id="removeTimeEntryButton"
+                      label="&removeTimeEntry.label;"
+                      accesskey="&removeTimeEntry.accesskey;"
+                      disabled="true"
+                      />
+            </hbox>
+          </groupbox>
+        </vbox>
+
+        <!-- Preferences -->
+        <hbox id="header-preferences"
+              class="header"
+              hidden="true"
+              data-category="panePreferences">
+          <label class="header-name">&panePreferences.title;</label>
+        </hbox>
+
+        <vbox id="preferencesContent"
+              data-category="panePreferences"
+              hidden="true"
+              flex="1">
+
+          <groupbox data-category="panePreferences" hidden="false">
+            <hbox align="center">
+              <label accesskey="&redmineDomain.accesskey;"
+                     control="redmineDomain">&redmineDomain.label;</label>
+              <textbox id="redmineDomain"
+                       class="padded uri-element"
+                       flex="1"
+                       placeholder="&redmineDomain.emptytext;"
+                       preference="extensions.time-tracker.domain"/>
+            </hbox>
+          </groupbox>
+
+          <groupbox data-category="panePreferences" hidden="false">
+            <caption><label>&behaviour.label;</label></caption>
+            <hbox align="center">
+              <checkbox id="markAsReportedStop" preference="extensions.time-tracker.mark-as-reported.stop"
+                        label="&markAsReportedStop.label;"/>
+            </hbox>
+            <hbox align="center">
+              <checkbox id="markAsReportedCopyToTask" preference="extensions.time-tracker.mark-as-reported.copy-to-task"
+                        label="&markAsReportedCopyToTask.label;"/>
+            </hbox>
+            <hbox align="center">
+              <checkbox id="latestTasksClickToTracking" preference="extensions.time-tracker.latest-tasks.click-to-tracking"
+                        label="&latestTasksClickToTracking.label;"/>
+            </hbox>
+          </groupbox>
+
+          <groupbox data-category="panePreferences" hidden="false">
+            <caption><label>&view.label;</label></caption>
+            <hbox align="center">
+              <checkbox id="copyDurationShow" preference="extensions.time-tracker.copy-duration.show"
+                        label="&copyDurationShow.label;"/>
+            </hbox>
+            <hbox align="center">
+              <label control="latestTasksCount">&latestTasksCount.label;</label>
+              <textbox id="latestTasksCount"
+                       class="padded"
+                       type="number" min="0" max="1000"
+                       size="4" hidespinbuttons="true"
+                       preference="extensions.time-tracker.latest-tasks.count"/>
+            </hbox>
+          </groupbox>
+
+        </vbox>
+
+
+      </prefpane>
+    </vbox>
+
+  </hbox>
+</page>
