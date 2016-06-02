@@ -7,7 +7,7 @@
     <em:id>{52ecc6be-9088-4387-a9d1-dde40ce7a8ac}</em:id>
     <em:type>2</em:type>
     <em:name>Time Tracker for Redmine</em:name>
-    <em:version>0.16</em:version>
+    <em:version>0.17</em:version>
     <em:description>Simple time tracker for Redmine.</em:description>
     <em:creator>Aleksandr Seleznev</em:creator>
 
@@ -27,7 +27,7 @@
       <Description>
         <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
         <em:minVersion>45.0</em:minVersion>
-        <em:maxVersion>48.0a1</em:maxVersion>
+        <em:maxVersion>49.0a1</em:maxVersion>
       </Description>
     </em:targetApplication>
 
