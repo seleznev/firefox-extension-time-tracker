@@ -104,7 +104,7 @@ var TimeTracker = {
 
     getSubjectByTitle: function(aTitle) {
         var subject = aTitle;
-        var re = new RegExp("^.*: (.*) - .* - .*");
+        var re = new RegExp("^[^:]*: (.*) - .* - .*");
         if (re.test(aTitle)) {
             subject = re.exec(aTitle)[1];
         }
